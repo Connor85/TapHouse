@@ -34,8 +34,42 @@ button {
     height: 500px;
     background-size: cover;
     font-family: fantasy;
-    font-size: 50px;
+    font-size: 30px; padding-top: 5px;
+    color: whitesmoke;
     margin-bottom: 100px;
-    padding-top: 50px;
 
 }
+
+.topnav {
+    overflow: hidden;
+    background-color: red;
+    font-family: 'Kavoon';font-size: 22px;
+  }
+  
+  .topnav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    width: 15%;
+  }
+  
+  .topnav a:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: red;
+    color: white;
+  }
+  
+  h3 {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  body {
+      background-color: #9494b8;
+  }

@@ -1,9 +1,15 @@
+
+ <div class="topnav">
+    <a class="active" href="/"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+    <a href="#about"> <i class="fa fa-fw fa-star"></i>About</a>
+  </div>
+
+
+
 <div class="container">
     <div class="header" id="gifJu"><h1 id="title" style="text-align: center">{{title}}</h1></div>
-
-  <br>
- 
-
+   
   <h3><i class="fa fa-beer" id="beer"></i>Our Beers</h3>
   <hr>
   <div class="col-md-12">
@@ -16,9 +22,9 @@
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star"></span>
-        <button (click)="editBeer(currentBeer)"> Edit </button>
-        <button (click)="sellBeer(currentBeer)"> Sell</button>
-        <button (click)="kegRefill(currentBeer)">Refill</button>
+        <button class="btn btn-default"(click)="editBeer(currentBeer)"> Edit </button>
+        <button class="btn btn-info"(click)="sellBeer(currentBeer)"> Sell</button>
+        <button class="btn btn-success"(click)="kegRefill(currentBeer)">Refill</button>
       </li>
     </ul>
     <hr>
@@ -71,9 +77,9 @@
       <li [class]="LiquorPrice(currentLiquor)" *ngFor="let currentLiquor of liquors"><i class="fas fa-glass-martini"></i>{{currentLiquor.brand}},
         {{currentLiquor.type}} | ${{currentLiquor.price}} | {{currentLiquor.alcoholContent}}% |
         {{currentLiquor.shotsLeft}}
-        <button (click)="editLiquor(currentLiquor)"> Edit </button>
-        <button (click)="sellLiquor(currentLiquor)"> Sell</button>
-        <button (click)="shotsRefill(currentLiquor)">Refill</button>
+        <button class="btn btn-default"(click)="editLiquor(currentLiquor)"> Edit </button>
+        <button class="btn btn-info" (click)="sellLiquor(currentLiquor)"> Sell</button>
+        <button class="btn btn-success"(click)="shotsRefill(currentLiquor)">Refill</button>
       </li>
     </ul>
     <hr>
