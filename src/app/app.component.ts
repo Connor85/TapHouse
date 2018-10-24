@@ -17,9 +17,17 @@ export class AppComponent {
     new Beer('Coors Light', 'Logger', 4 , 4.3),
     new Beer('Colt 45', 'Malt-Liquor', 3, 8),
     new Beer('Budlight', 'Logger', 5, 4.3),
-    new Beer('Four-Loko', 'Malt Beverage', 9, 12),
+    new Beer('Four-Loko', 'Malt Beverage', 11, 12),
     new Beer('Ol`e English', 'Malt Liquor', 2, 8.2),
   ];
+
+  
+  newBeer = new Beer("", "", 0, 0);
+
+  addBeer(beer: Beer) {
+    this.beers.push(this.newBeer);
+    this.newBeer = new Beer("", "",0, 0);
+  }
 
   selectedBeer = null;
 
@@ -29,11 +37,21 @@ export class AppComponent {
 
   // pintsLeft = 124;
 
-  sellBeer(beer){
+  sellBeer(beer:Beer){
      beer.pintsLeft -= 1;
   }
 
   finishedEditing(){
     this.selectedBeer = null;
   }
+
+  sortPrice(currentBeer: Beer) {
+    if (currentBeer.alcoholContent >= 8) {
+      return "bg-warning";
+     } else if (currentBeer.alcoholContent <= 10)
+     return "bg-danger";
+  } 
+
+
+
 }
