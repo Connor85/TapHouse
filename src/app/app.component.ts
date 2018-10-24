@@ -35,8 +35,6 @@ export class AppComponent {
     this.selectedBeer= clickedBeer;
   }
 
-  // pintsLeft = 124;
-
   sellBeer(beer:Beer){
      beer.pintsLeft -= 1;
   }
@@ -52,6 +50,8 @@ export class AppComponent {
      return "bg-danger";
   } 
 
-
+  kegRefill(beer:Beer){
+    beer.pintsLeft = 124;
+  }
 
 }

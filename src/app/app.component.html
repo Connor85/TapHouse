@@ -9,6 +9,7 @@
         {{currentBeer.type}} | ${{currentBeer.price}} | {{currentBeer.alcoholContent}}% | {{currentBeer.pintsLeft}}
         <button (click)="editBeer(currentBeer)"> Edit </button>
     <button (click)="sellBeer(currentBeer)"> Sell</button>
+    <button (click)="kegRefill(currentBeer)">Refill</button>
       </li>
     </ul>
     <ul>
@@ -44,6 +45,7 @@
       <input [(ngModel)]="newBeer.price">
       <label>New Alcohol Content</label>
       <input [(ngModel)]="newBeer.alcoholContent">
+      <button (click)="finishedEditing()">Done!</button>
     </div>
-    <button (click)="finishedEditing()">Done!</button>
+   
   </div>
