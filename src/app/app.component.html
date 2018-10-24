@@ -8,20 +8,12 @@
       <li [class]="sortPrice(currentBeer)" *ngFor="let currentBeer of beers">{{currentBeer.brand}},
         {{currentBeer.type}} | ${{currentBeer.price}} | {{currentBeer.alcoholContent}}% | {{currentBeer.pintsLeft}}
         <button (click)="editBeer(currentBeer)"> Edit </button>
-    <button (click)="sellBeer(currentBeer)"> Sell</button>
-    <button (click)="kegRefill(currentBeer)">Refill</button>
+        <button (click)="sellBeer(currentBeer)"> Sell</button>
+        <button (click)="kegRefill(currentBeer)">Refill</button>
       </li>
     </ul>
-    <ul>
-      <li>{{newBeer.brand}},
-        {{newBeer.type}} | ${{newBeer.price}} | {{newBeer.alcoholContent}}% | {{newBeer.pintsLeft}}
-        <button (click)="editBeer(currentBeer)"> Edit </button>
-        <button (click)="sellBeer(currentBeer)"> Sell</button>
-        </li>
-      </ul>
     <hr>
-  
-    <button (click)="addBeer(newBeer)">Add Beer</button>
+
   </div>
 
   <div *ngIf="selectedBeer">
@@ -33,19 +25,34 @@
     <input [(ngModel)]="selectedBeer.price">
     <label>Update the Alcohol Content</label>
     <input [(ngModel)]="selectedBeer.alcoholContent">
+    <button (click)="finishedEditing()">Done!</button>
+
     <hr>
   </div>
-    <!-- add -->
-    <div *ngIf="newBeer">
+  <!-- add new beer-->
+  <div class="addBeer col-md-7" *ngIf="newBeer">
+    <h3>Add a Beer</h3>
+    <form action="">
+    <div class="form-group">
       <label>New Name</label>
       <input [(ngModel)]="newBeer.brand">
+    </div>
+    <div class="form-group">
       <label>New Type</label>
       <input [(ngModel)]="newBeer.type">
+    </div>
+    <div class="form-group">
+
       <label>New Price</label>
       <input [(ngModel)]="newBeer.price">
+    </div>
+    <div class="form-group">
+
       <label>New Alcohol Content</label>
       <input [(ngModel)]="newBeer.alcoholContent">
-      <button (click)="finishedEditing()">Done!</button>
     </div>
-   
+    <button (click)="addBeer(newBeer)">Add Beer</button>
+  </form>
   </div>
+
+</div>

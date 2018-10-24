@@ -41,6 +41,7 @@ export class AppComponent {
 
   finishedEditing(){
     this.selectedBeer = null;
+    this.newBeer = null;
   }
 
   sortPrice(currentBeer: Beer) {
