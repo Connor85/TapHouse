@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Beer } from './models/beer.model';
+import { Liquor } from './models/liquor.model';
 
 @Component({
   selector: 'app-root',
@@ -41,7 +42,7 @@ export class AppComponent {
 
   finishedEditing(){
     this.selectedBeer = null;
-    this.newBeer = null;
+   
   }
 
   sortPrice(currentBeer: Beer) {
@@ -55,4 +56,46 @@ export class AppComponent {
     beer.pintsLeft = 124;
   }
 
+// 
+
+
+  liquors: Liquor[] = [
+    new Liquor('Fremont', 'IPA', 5, 8.2),
+    new Liquor('Guiness', 'Stout', 10, 10),
+ 
+  ];
+
+  
+  newLiquor = new Liquor("", "", 0, 0);
+
+  addLiquor(liquors: Liquor) {
+    this.liquors.push(this.newLiquor);
+    this.newLiquor = new Liquor("", "",0, 0);
+  }
+
+  selectedLiquor = null;
+
+  editLiquor(clickedLiquor){
+    this.selectedLiquor= clickedLiquor;
+  }
+
+  shotsRefill(liquors: Liquor){
+    liquors.shotsLeft = 22;
+  }
+
+  sellLiquor(liquors: Liquor){
+    liquors.shotsLeft -= 1;
+ }
+
+  finishedLiquor(){
+    this.selectedLiquor = null;
+
+  }
+
+  LiquorPrice(currentLiquor: Liquor) {
+    if (currentLiquor.alcoholContent >= 8) {
+      return "bg-warning";
+     } else if (currentLiquor.alcoholContent <= 10)
+     return "bg-danger";
+  } 
 }

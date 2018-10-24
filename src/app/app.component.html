@@ -1,7 +1,7 @@
 <div class="container">
   <h1 class="jumbotron">{{ title }}</h1>
 
-  <h3>Beers For Sale</h3>
+  <h3>Our Beers</h3>
   <hr>
   <div class="col-md-7">
     <ul>
@@ -26,13 +26,11 @@
     <label>Update the Alcohol Content</label>
     <input [(ngModel)]="selectedBeer.alcoholContent">
     <button (click)="finishedEditing()">Done!</button>
-
     <hr>
   </div>
   <!-- add new beer-->
   <div class="addBeer col-md-7" *ngIf="newBeer">
     <h3>Add a Beer</h3>
-    <form action="">
     <div class="form-group">
       <label>New Name</label>
       <input [(ngModel)]="newBeer.brand">
@@ -42,17 +40,70 @@
       <input [(ngModel)]="newBeer.type">
     </div>
     <div class="form-group">
-
       <label>New Price</label>
       <input [(ngModel)]="newBeer.price">
     </div>
     <div class="form-group">
-
       <label>New Alcohol Content</label>
       <input [(ngModel)]="newBeer.alcoholContent">
     </div>
     <button (click)="addBeer(newBeer)">Add Beer</button>
-  </form>
   </div>
+  <br>
+  <br>
+  <br>
+
+  <!-- Liquors -->
+
+  <h3>Our Liquors</h3>
+  <hr>
+  <div class="col-md-7">
+    <ul>
+      <li [class]="LiquorPrice(currentLiquor)" *ngFor="let currentLiquor of liquors">{{currentLiquor.brand}},
+        {{currentLiquor.type}} | ${{currentLiquor.price}} | {{currentLiquor.alcoholContent}}% |
+        {{currentLiquor.shotsLeft}}
+        <button (click)="editLiquor(currentLiquor)"> Edit </button>
+        <button (click)="sellLiquor(currentLiquor)"> Sell</button>
+        <button (click)="shotsRefill(currentLiquor)">Refill</button>
+      </li>
+    </ul>
+    <hr>
+
+  </div>
+
+  <div *ngIf="selectedLiquor">
+    <label>Update the Name</label>
+    <input [(ngModel)]="selectedLiquor.brand">
+    <label>Update the Type</label>
+    <input [(ngModel)]="selectedLiquor.type">
+    <label>Update the Price</label>
+    <input [(ngModel)]="selectedLiquor.price">
+    <label>Update the Alcohol Content</label>
+    <input [(ngModel)]="selectedLiquor.alcoholContent">
+    <button (click)="finishedLiquor()">Done!</button>
+    <hr>
+  </div>
+
+  <!-- add new Liquor-->
+  <div class="addLiquor col-md-7" *ngIf="newLiquor">
+    <h3>Add a Liquor</h3>
+    <div class="form-group">
+      <label>New Name</label>
+      <input [(ngModel)]="newLiquor.brand">
+    </div>
+    <div class="form-group">
+      <label>New Type</label>
+      <input [(ngModel)]="newLiquor.type">
+    </div>
+    <div class="form-group">
+      <label>New Price</label>
+      <input [(ngModel)]="newLiquor.price">
+    </div>
+    <div class="form-group">
+      <label>New Alcohol Content</label>
+      <input [(ngModel)]="newLiquor.alcoholContent">
+    </div>
+  </div>
+  <button (click)="addLiquor(newLiquor)">Add Liquor</button>
 
 </div>
