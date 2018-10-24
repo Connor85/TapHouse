@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Beer } from './models/beer.model';
 import { Liquor } from './models/liquor.model';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,6 +12,7 @@ import { Liquor } from './models/liquor.model';
 export class AppComponent {
   title = 'Mark and Connors Craft Beer';
   sellsThis = 'Beer and Hard-Liquor';
+ 
 
   beers: Beer[] = [
     new Beer('Fremont', 'IPA', 5, 8.2),

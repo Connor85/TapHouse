@@ -5,7 +5,7 @@
   <hr>
   <div class="col-md-7">
     <ul>
-      <li [class]="sortPrice(currentBeer)" *ngFor="let currentBeer of beers">{{currentBeer.brand}},
+      <li [class]="sortPrice(currentBeer)" *ngFor="let currentBeer of beers"><i class="fa fa-beer"></i> {{currentBeer.brand}},
         {{currentBeer.type}} | ${{currentBeer.price}} | {{currentBeer.alcoholContent}}% | {{currentBeer.pintsLeft}}
         <button (click)="editBeer(currentBeer)"> Edit </button>
         <button (click)="sellBeer(currentBeer)"> Sell</button>
@@ -30,7 +30,7 @@
   </div>
   <!-- add new beer-->
   <div class="addBeer col-md-7" *ngIf="newBeer">
-    <h3>Add a Beer</h3>
+    <h3 class="fa fa-beer">Add a Beer</h3>
     <div class="form-group">
       <label>New Name</label>
       <input [(ngModel)]="newBeer.brand">
