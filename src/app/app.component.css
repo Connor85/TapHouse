@@ -23,6 +23,10 @@ button {
     color: goldenrod;
 }
 
+.checked {
+    color: yellow;
+}
+
 .header, #title {
     background-image: url('https://media.giphy.com/media/PvZ2jLjFofH4Q/giphy.gif');
     background-repeat: no-repeat;
