@@ -3,18 +3,21 @@
 
 <h3>Beers For Sale</h3>
 <hr>
-<div class="col-md-6">
+<div class="col-md-12">
   <ul>
-    <li *ngFor="let currentBeer of beers">{{currentBeer.brand}}, {{currentBeer.type}} | ${{currentBeer.price}} | {{currentBeer.alcoholContent}}% <button (click)="editBeer(currentBeer)"> edit</button> </li>
+    <li *ngFor="let currentBeer of beers">{{currentBeer.brand}}, {{currentBeer.type}} | ${{currentBeer.price}} | {{currentBeer.alcoholContent}}% | {{currentBeer.pintsLeft}} <button (click)="editBeer(currentBeer)"> Edit </button> 
+    <button (click)="sellBeer(currentBeer)"> Sell</button> </li>
   </ul>
 </div>
 
 <div *ngIf="selectedBeer">
-  <h3>{{selectedBeer.name}} ${{selectedBeer.price}}</h3>
   <label>Update the Price</label>
   <input [(ngModel)]="selectedBeer.price">
+  <hr>
   <button (click) ="finishedEditing()">Done!</button>
 </div>
+
+<!-- <div *ngIf="sellPint"></div> -->
 
 </div>
 
