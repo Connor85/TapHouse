@@ -10,7 +10,7 @@ import { Liquor } from './models/liquor.model';
 })
 
 export class AppComponent {
-  title = 'Mark and Connors Craft Beer';
+  title = 'Ma_Nnor`s Room';
   sellsThis = 'Beer and Hard-Liquor';
  
 
@@ -49,9 +49,9 @@ export class AppComponent {
 
   sortPrice(currentBeer: Beer) {
     if (currentBeer.alcoholContent >= 8) {
-      return "text-warning";
+      return "text-primary";
      } else if (currentBeer.alcoholContent <= 10)
-     return "text-danger";
+     return "text-success";
   } 
 
   kegRefill(beer:Beer){
@@ -67,7 +67,8 @@ export class AppComponent {
     new Liquor('Long Island', 'Rum, gin, vodka, tequila, and triple sec mixed into cola and citrus', 5, 10),
     new Liquor('Margarita', 'Tequilla, Lime-juice', 12, 13),
     new Liquor('Zombie', 'Apricot brandy, lime, and pineapple juice.', 13, 14),
-    new Liquor('Metropolitan', 'Vodka, triple sec, cranberry juice, and lime juice', 15, 14)
+    new Liquor('Metropolitan', 'Vodka, triple sec, cranberry juice, and lime juice', 15, 14),
+    new Liquor('Jägerbomb', 'Jägemeifer, Redbull', 13, 12)
 
   ];
 
