@@ -41,14 +41,14 @@ button {
 
 .topnav {
     overflow: hidden;
-    background-color: rebeccapurple;
+    background-color: indigo;
     font-family: 'Kavoon';
     font-size: 22px;
   }
   
   .topnav a {
     float: left;
-    color: white;
+    color: lavenderblush;
     text-align: center;
     padding: 10px 10px;
     text-decoration: none;
