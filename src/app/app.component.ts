@@ -49,9 +49,9 @@ export class AppComponent {
 
   sortPrice(currentBeer: Beer) {
     if (currentBeer.alcoholContent >= 8) {
-      return "bg-warning";
+      return "text-warning";
      } else if (currentBeer.alcoholContent <= 10)
-     return "bg-danger";
+     return "text-danger";
   } 
 
   kegRefill(beer:Beer){
@@ -62,9 +62,13 @@ export class AppComponent {
 
 
   liquors: Liquor[] = [
-    new Liquor('Fremont', 'IPA', 5, 8.2),
-    new Liquor('Guiness', 'Stout', 10, 10),
- 
+    new Liquor('Bloody Mary', 'Mix of tomato juice, vodka, and spices', 12, 12),
+    new Liquor('Daiquiri', 'Mixed fruits, white rum, lime juice, and simple syrup', 13, 11),
+    new Liquor('Long Island', 'Rum, gin, vodka, tequila, and triple sec mixed into cola and citrus', 5, 10),
+    new Liquor('Margarita', 'Tequilla, Lime-juice', 12, 13),
+    new Liquor('Zombie', 'Apricot brandy, lime, and pineapple juice.', 13, 14),
+    new Liquor('Metropolitan', 'Vodka, triple sec, cranberry juice, and lime juice', 15, 14)
+
   ];
 
   
@@ -95,9 +99,9 @@ export class AppComponent {
   }
 
   LiquorPrice(currentLiquor: Liquor) {
-    if (currentLiquor.alcoholContent >= 8) {
-      return "bg-warning";
-     } else if (currentLiquor.alcoholContent <= 10)
-     return "bg-danger";
+    if (currentLiquor.alcoholContent <= 11) {
+      return "text-warning";
+     } else if (currentLiquor.alcoholContent >= 12)
+     return "text-danger";
   } 
 }

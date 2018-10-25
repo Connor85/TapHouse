@@ -1,124 +1,134 @@
+<div class="topnav">
+  <a class="active" href="/"><i class="fa fa-fw fa-home"></i>Home</a>
+  <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+  <a href="#about"> <i class="fa fa-fw fa-star"></i>About</a>
+</div>
 
- <div class="topnav">
-    <a class="active" href="/"><i class="fa fa-fw fa-home"></i>Home</a>
-    <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-    <a href="#about"> <i class="fa fa-fw fa-star"></i>About</a>
-  </div>
+<!--  -->
+<div class="header" id="gifJu">
+  <h1 id="title" style="text-align: center">{{title}}</h1>
+</div>
 
-
-
+<!--  -->
 <div class="container">
-    <div class="header" id="gifJu"><h1 id="title" style="text-align: center">{{title}}</h1></div>
-   
-  <h3><i class="fa fa-beer" id="beer"></i>Our Beers</h3>
-  <hr>
-  <div class="col-md-12">
-    <ul>
-      <li [class]="sortPrice(currentBeer)" *ngFor="let currentBeer of beers"><i class="fa fa-beer"></i> {{currentBeer.brand}},
-        {{currentBeer.type}} | ${{currentBeer.price}} | {{currentBeer.alcoholContent}}% | {{currentBeer.pintsLeft}}
-        <span class="heading">User Rating</span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-        <button class="btn btn-default"(click)="editBeer(currentBeer)"> Edit </button>
-        <button class="btn btn-info"(click)="sellBeer(currentBeer)"> Sell</button>
-        <button class="btn btn-success"(click)="kegRefill(currentBeer)">Refill</button>
-      </li>
-    </ul>
-    <hr>
+<div class="row">
+    <div class="col-md-6">
+      <h3><i class="fa fa-beer" id="beer"></i>Our Beers</h3>
+      <hr>
+      <ul [class]="sortPrice(currentBeer)" *ngFor="let currentBeer of beers">
+        <li>
+          <i class="fa fa-beer"></i>
+          {{currentBeer.brand}} <br>
+          {{currentBeer.type}} <br>
+          ${{currentBeer.price}} <br>
+          {{currentBeer.alcoholContent}}% |
+          {{currentBeer.pintsLeft}}
+          <hr>
+          <button class="btn btn-secondary" (click)="editBeer(currentBeer)"> Edit </button>
+          <button class="btn btn-info" (click)="sellBeer(currentBeer)"> Sell</button>
+          <button class="btn btn-success" (click)="kegRefill(currentBeer)">Refill</button>
+        </li>
+      </ul>
+      <hr>
 
+      <!--  -->
+      <div *ngIf="selectedBeer">
+        <label>Update the Name</label>
+        <input [(ngModel)]="selectedBeer.brand">
+        <label>Update the Type</label>
+        <input [(ngModel)]="selectedBeer.type">
+        <label>Update the Price</label>
+        <input [(ngModel)]="selectedBeer.price">
+        <label>Update the Alcohol Content</label>
+        <input [(ngModel)]="selectedBeer.alcoholContent">
+        <button (click)="finishedEditing()">Done!</button>
+        <hr>
+      </div>
+
+      <!-- add new beer-->
+      <div class="addBeer" *ngIf="newBeer">
+        <h3>Add a Beer</h3>
+        <div class="form-group">
+          <label>New Name</label>
+          <input [(ngModel)]="newBeer.brand">
+        </div>
+        <div class="form-group">
+          <label>New Type</label>
+          <input [(ngModel)]="newBeer.type">
+        </div>
+        <div class="form-group">
+          <label>New Price</label>
+          <input [(ngModel)]="newBeer.price">
+        </div>
+        <div class="form-group">
+          <label>New Alcohol Content</label>
+          <input [(ngModel)]="newBeer.alcoholContent">
+        </div>
+        <button (click)="addBeer(newBeer)">Add Beer</button>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- Liquors -->
+
+    <div class="col-md-6">
+      <h3><i class="fas fa-glass-martini" id="liquor"></i>Our Liquors</h3>
+      <hr>
+      <ul [class]="LiquorPrice(currentLiquor)" *ngFor="let currentLiquor of liquors">
+        <li>
+          <i class="fas fa-glass-martini"></i>
+          {{currentLiquor.brand}} <br>
+          {{currentLiquor.type}} <br>
+          ${{currentLiquor.price}} <br>
+          {{currentLiquor.alcoholContent}}% |
+          {{currentLiquor.shotsLeft}}
+          <hr>
+          <button class="btn btn-secondary" (click)="editLiquor(currentLiquor)"> Edit </button>
+          <button class="btn btn-info" (click)="sellLiquor(currentLiquor)"> Sell</button>
+          <button class="btn btn-success" (click)="shotsRefill(currentLiquor)">Refill</button>
+        </li>
+      </ul>
+      <hr>
+      <!--  -->
+
+      <div *ngIf="selectedLiquor">
+        <label>Update the Name</label>
+        <input [(ngModel)]="selectedLiquor.brand">
+        <label>Update the Type</label>
+        <input [(ngModel)]="selectedLiquor.type">
+        <label>Update the Price</label>
+        <input [(ngModel)]="selectedLiquor.price">
+        <label>Update the Alcohol Content</label>
+        <input [(ngModel)]="selectedLiquor.alcoholContent">
+        <button (click)="finishedLiquor()">Done!</button>
+        <hr>
+      </div>
+
+      <!-- add new Liquor-->
+      <div class="addLiquor" *ngIf="newLiquor">
+        <h3>Add a Liquor</h3>
+        <div class="form-group">
+          <label>New Name</label>
+          <input [(ngModel)]="newLiquor.brand">
+        </div>
+        <div class="form-group">
+          <label>New Type</label>
+          <input [(ngModel)]="newLiquor.type">
+        </div>
+        <div class="form-group">
+          <label>New Price</label>
+          <input [(ngModel)]="newLiquor.price">
+        </div>
+        <div class="form-group">
+          <label>New Alcohol Content</label>
+          <input [(ngModel)]="newLiquor.alcoholContent">
+        </div>
+      </div>
+      <button (click)="addLiquor(newLiquor)">Add Liquor</button>
+    </div>
   </div>
-
-  <div *ngIf="selectedBeer">
-    <label>Update the Name</label>
-    <input [(ngModel)]="selectedBeer.brand">
-    <label>Update the Type</label>
-    <input [(ngModel)]="selectedBeer.type">
-    <label>Update the Price</label>
-    <input [(ngModel)]="selectedBeer.price">
-    <label>Update the Alcohol Content</label>
-    <input [(ngModel)]="selectedBeer.alcoholContent">
-    <button (click)="finishedEditing()">Done!</button>
-    <hr>
-  </div>
-  <!-- add new beer-->
-  <div class="addBeer col-md-7" *ngIf="newBeer">
-    <h3>Add a Beer</h3>
-    <div class="form-group">
-      <label>New Name</label>
-      <input [(ngModel)]="newBeer.brand">
-    </div>
-    <div class="form-group">
-      <label>New Type</label>
-      <input [(ngModel)]="newBeer.type">
-    </div>
-    <div class="form-group">
-      <label>New Price</label>
-      <input [(ngModel)]="newBeer.price">
-    </div>
-    <div class="form-group">
-      <label>New Alcohol Content</label>
-      <input [(ngModel)]="newBeer.alcoholContent">
-    </div>
-    <button (click)="addBeer(newBeer)">Add Beer</button>
-  </div>
-  <br>
-  <br>
-  <br>
-
-  <!-- Liquors -->
-
-  <h3><i class="fas fa-glass-martini" id="liquor"></i>Our Liquors</h3>
-  <hr>
-  <div class="col-md-7">
-    <ul>
-      <li [class]="LiquorPrice(currentLiquor)" *ngFor="let currentLiquor of liquors"><i class="fas fa-glass-martini"></i>{{currentLiquor.brand}},
-        {{currentLiquor.type}} | ${{currentLiquor.price}} | {{currentLiquor.alcoholContent}}% |
-        {{currentLiquor.shotsLeft}}
-        <button class="btn btn-default"(click)="editLiquor(currentLiquor)"> Edit </button>
-        <button class="btn btn-info" (click)="sellLiquor(currentLiquor)"> Sell</button>
-        <button class="btn btn-success"(click)="shotsRefill(currentLiquor)">Refill</button>
-      </li>
-    </ul>
-    <hr>
-
-  </div>
-
-  <div *ngIf="selectedLiquor">
-    <label>Update the Name</label>
-    <input [(ngModel)]="selectedLiquor.brand">
-    <label>Update the Type</label>
-    <input [(ngModel)]="selectedLiquor.type">
-    <label>Update the Price</label>
-    <input [(ngModel)]="selectedLiquor.price">
-    <label>Update the Alcohol Content</label>
-    <input [(ngModel)]="selectedLiquor.alcoholContent">
-    <button (click)="finishedLiquor()">Done!</button>
-    <hr>
-  </div>
-
-  <!-- add new Liquor-->
-  <div class="addLiquor col-md-7" *ngIf="newLiquor">
-    <h3>Add a Liquor</h3>
-    <div class="form-group">
-      <label>New Name</label>
-      <input [(ngModel)]="newLiquor.brand">
-    </div>
-    <div class="form-group">
-      <label>New Type</label>
-      <input [(ngModel)]="newLiquor.type">
-    </div>
-    <div class="form-group">
-      <label>New Price</label>
-      <input [(ngModel)]="newLiquor.price">
-    </div>
-    <div class="form-group">
-      <label>New Alcohol Content</label>
-      <input [(ngModel)]="newLiquor.alcoholContent">
-    </div>
-  </div>
-  <button (click)="addLiquor(newLiquor)">Add Liquor</button>
-
 </div>
