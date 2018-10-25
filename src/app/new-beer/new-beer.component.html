@@ -1,4 +1,4 @@
-<div *ngIf="addBeer">
+<div class="addBeer" *ngIf="addBeer">
   <h3>Add a Beer</h3>
   <div class="form-group">
     <label>New Name</label>
@@ -16,7 +16,7 @@
     <label>New Alcohol Content</label>
     <input type="text" [(ngModel)]="alcoholContent">
   </div>
-  <button class="btn btn-info" (click)="addBeer(brand, type, brand, alcohol)">Add Beer</button>
+  <button class="btn btn-info" (click)="addBeer(brand, type, price, alcoholContent)">Add Beer</button>
 </div>
 <hr>
 

@@ -8,12 +8,12 @@
           ${{currentBeer.price}} <br>
           {{currentBeer.alcoholContent}}% |
           {{currentBeer.pintsLeft}}
-          <hr>
-
+         
           <button class="btn btn-info" (click)="sellBeer(currentBeer)"> Sell</button>
 
-          <button class="btn btn-success" (click)="kegRefill(currentBeer)">Refill</button>
+          <button class="btn btn-success" (click)="refill(currentBeer)">Refill</button>
 
           <edit-beer [childSelectedBeer]="currentBeer" (clickedDone)="editBeer($event)"></edit-beer>
+          <hr>
         </li>
       </ul>

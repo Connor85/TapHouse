@@ -1,14 +1,18 @@
 <button class="btn btn-secondary" (click)="startEdit()"> Edit </button>
-
+<hr>
 <div *ngIf="editing">
   <label>Update the Name</label>
   <input [(ngModel)]="childSelectedBeer.brand">
+  <br>
   <label>Update the Type</label>
   <input [(ngModel)]="childSelectedBeer.type">
+  <br>
   <label>Update the Price</label>
   <input [(ngModel)]="childSelectedBeer.price">
+  <br>
   <label>Update the Alcohol Content</label>
   <input [(ngModel)]="childSelectedBeer.alcoholContent">
+  <br>
   <button (click)="finishedEditing()">Done!</button>
   <hr>
 </div>

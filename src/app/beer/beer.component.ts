@@ -21,14 +21,15 @@ export class BeerComponent {
     beer.pintsLeft -= 1;
   }
 
-  sortPrice(currentBeer: Beer) {
-    if (currentBeer.alcoholContent >= 8) {
+  sortPrice(childBeerList: Beer) {
+    if (childBeerList.alcoholContent >= 8) {
       return "text-primary";
-    } else if (currentBeer.alcoholContent <= 10)
+    } else if (childBeerList.alcoholContent <= 10)
       return "text-success";
   }
 
-  kegRefill(beer: Beer) {
+  refill(beer: Beer) {
     beer.pintsLeft = 124;
   }
+
 }

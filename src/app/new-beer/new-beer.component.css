@@ -1,0 +1,9 @@
+.addBeer {
+    background-image: url('https://ladysmithgazette.co.za/wp-content/uploads/sites/64/2016/12/bar-1.jpg');
+    background-size: cover;
+    width:100%;
+    background-repeat: no-repeat;
+    border: solid goldenrod 1px;
+    color: white;
+}
+

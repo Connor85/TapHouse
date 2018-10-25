@@ -10,9 +10,9 @@ export class NewBeerComponent {
   @Input() isAdding: boolean;
   @Output() addNew = new EventEmitter();
 
-  addBeer(name: string, brand: string, price: number,alcohol: number){
+  addBeer(brand: string, type: string, price: number, alcoholContent: number){
     this.isAdding = false;
-    let addDrink = new Beer(name, brand, price, alcohol);
+    let addDrink = new Beer(brand, type, price, alcoholContent);
     console.log(addDrink);
     this.addNew.emit(addDrink);
   }
