@@ -54,7 +54,6 @@ export class AppComponent {
     new Liquor('Zombie', 'Apricot brandy, lime, and pineapple juice.', 13, 14),
     new Liquor('Metropolitan', 'Vodka, triple sec, cranberry juice, and lime juice', 15, 14),
     new Liquor('Jägerbomb', 'Jägemeifer, Redbull', 13, 12)
-
   ];
 
   
