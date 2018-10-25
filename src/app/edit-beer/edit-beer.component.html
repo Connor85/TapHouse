@@ -1,12 +1,14 @@
-<div *ngIf="selectedBeer">
+<button class="btn btn-secondary" (click)="startEdit()"> Edit </button>
+
+<div *ngIf="editing">
   <label>Update the Name</label>
-  <input [(ngModel)]="selectedBeer.brand">
+  <input [(ngModel)]="childSelectedBeer.brand">
   <label>Update the Type</label>
-  <input [(ngModel)]="selectedBeer.type">
+  <input [(ngModel)]="childSelectedBeer.type">
   <label>Update the Price</label>
-  <input [(ngModel)]="selectedBeer.price">
+  <input [(ngModel)]="childSelectedBeer.price">
   <label>Update the Alcohol Content</label>
-  <input [(ngModel)]="selectedBeer.alcoholContent">
-  <button (clickedDone)="finishedEditing()">Done!</button>
+  <input [(ngModel)]="childSelectedBeer.alcoholContent">
+  <button (click)="finishedEditing()">Done!</button>
   <hr>
 </div>

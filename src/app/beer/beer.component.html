@@ -9,11 +9,11 @@
           {{currentBeer.alcoholContent}}% |
           {{currentBeer.pintsLeft}}
           <hr>
-          
-          <button class="btn btn-secondary" (click)="editBeer(currentBeer)"> Edit </button>
 
           <button class="btn btn-info" (click)="sellBeer(currentBeer)"> Sell</button>
 
           <button class="btn btn-success" (click)="kegRefill(currentBeer)">Refill</button>
+
+          <edit-beer [childSelectedBeer]="currentBeer" (clickedDone)="editBeer($event)"></edit-beer>
         </li>
       </ul>

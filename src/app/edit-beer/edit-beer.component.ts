@@ -9,8 +9,15 @@ import { Beer } from '../models/beer.model';
 export class EditBeerComponent {
   @Input() childSelectedBeer: Beer;
   @Output() clickedDone = new EventEmitter();
+  
+  editing: boolean = false;
+
+  startEdit() {
+    this.editing = true;
+  }
 
   finishedEditing( )  {
-    this.clickedDone.emit()
+    this.clickedDone.emit(this.childSelectedBeer);
+    this.editing = false;
   }
 }

@@ -27,9 +27,8 @@ export class AppComponent {
   selectedBeer = null;
 
   editBeer(clickBeer){
-    this.selectedBeer= clickBeer;
+    this.selectedBeer = clickBeer;
   }
-
 
   finishedEditing(){
     this.selectedBeer = null;
