@@ -1,3 +1,19 @@
-<p>
-  beer works!
-</p>
+<h3><i class="fa fa-beer" id="beer"></i> Our Beers</h3>
+      <hr>
+      <ul [class]="sortPrice(currentBeer)" *ngFor="let currentBeer of childBeerList">
+        <li>
+          <i class="fa fa-beer"></i>
+          {{currentBeer.brand}} <br>
+          {{currentBeer.type}} <br>
+          ${{currentBeer.price}} <br>
+          {{currentBeer.alcoholContent}}% |
+          {{currentBeer.pintsLeft}}
+          <hr>
+          
+          <button class="btn btn-secondary" (click)="editBeer(currentBeer)"> Edit </button>
+
+          <button class="btn btn-info" (click)="sellBeer(currentBeer)"> Sell</button>
+
+          <button class="btn btn-success" (click)="kegRefill(currentBeer)">Refill</button>
+        </li>
+      </ul>

@@ -14,7 +14,7 @@ export class AppComponent {
   sellsThis = 'Beer and Hard-Liquor';
  
 
-  beers: Beer[] = [
+  masterBeerList: Beer[] = [
     new Beer('Fremont', 'IPA', 5, 8.2),
     new Beer('Guiness', 'Stout', 10, 10),
     new Beer('Coors Light', 'Logger', 4 , 4.3),
@@ -24,41 +24,17 @@ export class AppComponent {
     new Beer('Ol`e English', 'Malt Liquor', 2, 8.2),
   ];
 
-  
-  newBeer = new Beer("", "", 0, 0);
-
-  addBeer(beer: Beer) {
-    this.beers.push(this.newBeer);
-    this.newBeer = new Beer("", "",0, 0);
-  }
-
   selectedBeer = null;
 
-  editBeer(clickedBeer){
-    this.selectedBeer= clickedBeer;
+  editBeer(clickBeer){
+    this.selectedBeer= clickBeer;
   }
 
-  sellBeer(beer:Beer){
-     beer.pintsLeft -= 1;
-  }
 
   finishedEditing(){
     this.selectedBeer = null;
    
   }
-
-  sortPrice(currentBeer: Beer) {
-    if (currentBeer.alcoholContent >= 8) {
-      return "text-primary";
-     } else if (currentBeer.alcoholContent <= 10)
-     return "text-success";
-  } 
-
-  kegRefill(beer:Beer){
-    beer.pintsLeft = 124;
-  }
-
-// 
 
 
   liquors: Liquor[] = [

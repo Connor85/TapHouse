@@ -18,37 +18,11 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <h3><i class="fa fa-beer" id="beer"></i> Our Beers</h3>
-      <hr>
-      <ul [class]="sortPrice(currentBeer)" *ngFor="let currentBeer of beers">
-        <li>
-          <i class="fa fa-beer"></i>
-          {{currentBeer.brand}} <br>
-          {{currentBeer.type}} <br>
-          ${{currentBeer.price}} <br>
-          {{currentBeer.alcoholContent}}% |
-          {{currentBeer.pintsLeft}}
-          <hr>
-          <button class="btn btn-secondary" (click)="editBeer(currentBeer)"> Edit </button>
-          <button class="btn btn-info" (click)="sellBeer(currentBeer)"> Sell</button>
-          <button class="btn btn-success" (click)="kegRefill(currentBeer)">Refill</button>
-        </li>
-      </ul>
+      
+      <app-beer [childBeerList]="masterBeerList" (clickBeer)="editBeer($event)"></app-beer>
       <hr>
 
-      <!--  -->
-      <div *ngIf="selectedBeer">
-        <label>Update the Name</label>
-        <input [(ngModel)]="selectedBeer.brand">
-        <label>Update the Type</label>
-        <input [(ngModel)]="selectedBeer.type">
-        <label>Update the Price</label>
-        <input [(ngModel)]="selectedBeer.price">
-        <label>Update the Alcohol Content</label>
-        <input [(ngModel)]="selectedBeer.alcoholContent">
-        <button (click)="finishedEditing()">Done!</button>
-        <hr>
-      </div>
+      <edit-beer [childSelectedBeer]="selectedBeer" (clickedDone)="finishedEditing()"></edit-beer>
 
       <!-- add new beer-->
       <div class="addBeer" *ngIf="newBeer">
