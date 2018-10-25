@@ -25,6 +25,7 @@ export class AppComponent {
   ];
 
   selectedBeer = null;
+  isAdding: boolean = false;
 
   editBeer(clickBeer){
     this.selectedBeer = clickBeer;
@@ -35,6 +36,21 @@ export class AppComponent {
    
   }
 
+  addNew(masterBeerList: Beer){
+    this.masterBeerList.unshift(masterBeerList);
+
+  }
+
+  doneAdding(isDone: boolean) {
+    this.isAdding = isDone;
+  }
+
+  BeerPrice(masterBeerList: Beer) {
+    if (masterBeerList.alcoholContent <= 11) {
+      return "text-warning";
+     } else if (masterBeerList.alcoholContent >= 12)
+     return "text-danger";
+  } 
 
   liquors: Liquor[] = [
     new Liquor('Bloody Mary', 'Mix of tomato juice, vodka, and spices', 12, 12),

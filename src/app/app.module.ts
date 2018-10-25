@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BeerComponent } from './beer/beer.component';
 import { LiquorComponent } from './liquor/liquor.component';
 import { EditBeerComponent } from './edit-beer/edit-beer.component';
+import { NewBeerComponent } from './new-beer/new-beer.component';
 
 
 
@@ -14,7 +15,8 @@ import { EditBeerComponent } from './edit-beer/edit-beer.component';
     AppComponent,
     BeerComponent,
     LiquorComponent,
-    EditBeerComponent
+    EditBeerComponent,
+    NewBeerComponent
   ],
   imports: [
     FormsModule,

@@ -21,32 +21,11 @@
       
       <app-beer [childBeerList]="masterBeerList" (clickBeer)="editBeer($event)"></app-beer>
       <hr>
-
-      <!-- <edit-beer [childSelectedBeer]="selectedBeer" (clickedDone)="finishedEditing()"></edit-beer> -->
-
+      
       <!-- add new beer-->
-      <div class="addBeer" *ngIf="newBeer">
-        <h3>Add a Beer</h3>
-        <div class="form-group">
-          <label>New Name</label>
-          <input [(ngModel)]="newBeer.brand">
-        </div>
-        <div class="form-group">
-          <label>New Type</label>
-          <input [(ngModel)]="newBeer.type">
-        </div>
-        <div class="form-group">
-          <label>New Price</label>
-          <input [(ngModel)]="newBeer.price">
-        </div>
-        <div class="form-group">
-          <label>New Alcohol Content</label>
-          <input [(ngModel)]="newBeer.alcoholContent">
-        </div>
-      </div>
-      <hr>
-      <button class="btn btn-info" (click)="addBeer(newBeer)">Add Beer</button>
+      <new-beer [isAdding]="isAdding" (addNew)="addNew($event)"></new-beer>
     </div>
+
     <br>
     <br>
     <br>
